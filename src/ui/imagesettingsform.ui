@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageSettingsForm</class>
+ <widget class="QWidget" name="ImageSettingsForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>圖片小工具設定</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="general_groupBox">
+     <property name="title">
+      <string>通用設定</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <!-- 掛件名稱 -->
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_name">
+        <property name="text">
+         <string>掛件名稱:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="widgetName_lineEdit"/>
+      </item>
+      <!-- 座標 (X, Y) -->
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_X">
+        <property name="text">
+         <string>座標 X (px):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="coordX_lineEdit"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_Y">
+        <property name="text">
+         <string>座標 Y (px):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="coordY_lineEdit"/>
+      </item>
+      <!-- 視窗層級 -->
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_pos">
+        <property name="text">
+         <string>視窗層級:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="position_comboBox">
+        <item>
+         <property name="text">
+          <string>永遠置頂 (Stay on Top)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>普通 (Normal)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>置於底部 (On Desktop)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <!-- 拖曳開關 -->
+      <item row="4" column="0" colspan="2">
+       <widget class="QCheckBox" name="draggable_checkBox">
+        <property name="text">
+         <string>允許滑鼠拖曳移動</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <!-- 懸停隱藏開關 -->
+      <item row="5" column="0" colspan="2">
+       <widget class="QCheckBox" name="hoverHide_checkBox">
+        <property name="text">
+         <string>啟用滑鼠懸停時自動隱藏</string>
+        </property>
+       </widget>
+      </item>
+      <!-- 懸停透明度 (預設停用) -->
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_T">
+        <property name="text">
+         <string>懸停透明度 (%):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <layout class="QHBoxLayout" name="opacityLayout">
+        <item>
+         <widget class="QSlider" name="transparency_slider">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>20</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_opacityVal">
+          <property name="text">
+           <string>20%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <!-- 點擊穿透 -->
+      <item row="7" column="0" colspan="2">
+       <widget class="QCheckBox" name="clickThrough_checkBox">
+        <property name="text">
+         <string>啟用點擊穿透</string>
+        </property>
+       </widget>
+      </item>
+      <!-- 邊緣吸附 -->
+      <item row="8" column="0" colspan="2">
+        <widget class="QCheckBox" name="snap_checkBox">
+             <property name="text">
+                <string>啟用邊緣吸附</string>
+            </property>
+        </widget>
+      </item>
+      <!-- 隱藏外框 -->
+      <item row="9" column="0" colspan="2">
+       <widget class="QCheckBox" name="noFrame_checkBox">
+        <property name="text">
+         <string>隱藏外框</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <!-- 圖片媒體與尺寸設定 -->
+   <item>
+    <widget class="QGroupBox" name="image_groupBox">
+     <property name="title">
+      <string>圖片設定</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_image">
+      <item row="0" column="0" colspan="2">
+       <widget class="QPushButton" name="browseImage_button">
+        <property name="text">
+         <string>更換圖片...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_scale">
+        <property name="text">
+         <string>縮放比例 (%):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout" name="scaleLayout">
+        <item>
+         <widget class="QSlider" name="scale_slider">
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>200</number>
+          </property>
+          <property name="value">
+           <number>100</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_scaleVal">
+          <property name="text">
+           <string>100%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="vSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

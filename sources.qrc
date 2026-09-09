@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>config/icon.png</file>
+        <file>config/miku.gif</file>
+    </qresource>
+</RCC>
